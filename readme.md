@@ -39,18 +39,19 @@ Then the distribution of the number of computing jobs in the system is shown [he
 As a proof of concept and without loss of generality, we are going to look only at Monday morning from 6 to 10 am in May of 2019. The reason for this choice is that May is a neither a hot or cold month in NYC and Monday mornings are supposed to be rush hour time.
 ### Hailers' behavior analysis
 #### Interarrival times
-- The average interarrival time of the hailers is 0.4 seconds
-- The variance interarrival time is 0.31 seconds
+- The average of interarrival time of the hailers is 0.4 seconds
+- The variance of interarrival time is 0.31 seconds
 - The cdf of the interarrival time then can be graphed as shown below:
-
+!['cdf interarrival'](https://github.com/ChinhTranKaizen/RoboTaxiComputing/blob/main/May_2019/Monday_morning_cdf_hailers_request_interarrival_time.png?raw=true)
 - Using the hyperstar tool, the Phase-type distribution parameters can be derived as:
-
+!['fitting interarrival'](https://github.com/ChinhTranKaizen/RoboTaxiComputing/blob/main/May_2019/Monday_morning_fitting_hailers_request_interarrival_time_screenshot.png?raw=true)
 #### Trip duration
-- The average trip duration is 0.4 seconds
-- The variance trip duration is 0.31 seconds
+- The average of trip duration is 881 seconds
+- The variance of trip duration is 619155 seconds
 - The cdf of the trip duration then can be graphed as shown below:
-
+!['cdf trip duration'](https://github.com/ChinhTranKaizen/RoboTaxiComputing/blob/main/May_2019/Monday_morning_cdf_trip_duration.png?raw=true)
 - Using the hyperstar tool, the Phase-type distribution parameters can be derived as:
+!['fitting trip duration'](https://github.com/ChinhTranKaizen/RoboTaxiComputing/blob/main/May_2019/Monday_morning_fitting_trip_duration_screenshot.png?raw=true)
 ### Performance analysis of robotaxi computing system
 **on-going progress**
 
