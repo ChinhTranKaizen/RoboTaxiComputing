@@ -10,7 +10,7 @@ This project is aimed to answer questions similarly to the above.
 ## Project description
 The project is splitted into 2 parts: Hailers' behavior analysis and Performance analysis of robotaxi computing system
 ### Hailers' behavior analysis
-    This project applies data analysis, statistical modeling to the NYC Yellow Taxi dataset to answer the first question above. The procedures are as follow:
+This project applies data analysis, statistical modeling to the NYC Yellow Taxi dataset to answer the first question above. The procedures are as follow:
 
 - Extract trip start time and end time for each trip.
 
@@ -22,10 +22,35 @@ The project is splitted into 2 parts: Hailers' behavior analysis and Performance
 
 - Derive hailers' request interarrival time from engineered trip start time
 
+- Model the interarrival time distribution and residency time distribution as a [Phase-Type distribution](https://en.wikipedia.org/wiki/Phase-type_distribution), which is commonly done in analyzing service systems.
+
+- The fitting of the Phase-type distribution is done using [Hyperstar](https://www.mi.fu-berlin.de/inf/groups/ag-tech/projects/HyperStar/index.html) tool, which is based on K-Means algorithm.
+
 ### Performance analysis of robotaxi computing system
+Assuming that the hailers' request are prioritized to be execute comparing to computing request. Thus, when a hailers' request comes while all the taxis are busy executing either hailers' request or computing request, one computing job will be suspended to make place for the hailers' request. The job will be resumed with progress intact when a taxi is again become free.
+
+Thus, we can analyse the sytem as a Ph/Ph/c/N priority queue with 2 priority levels: the hailers (prioritized) and computing jobs.
+
+The distribution of number of hailers request in the system can be derived [here](https://github.com/ChinhTranKaizen/RoboTaxiComputing/blob/main/papers/Ph_Ph_c_N_Queue_Performance%20Evaluation%20of%20Cloud%20Computing%20Centers%20with%20General%20Arrivals%20and%20Service.pdf), which is based on these papers: [paper1](https://github.com/ChinhTranKaizen/RoboTaxiComputing/blob/main/papers/Reduced%20complexity%20in%20M_Ph_c_N%20queues.pdf), [paper2](https://github.com/ChinhTranKaizen/RoboTaxiComputing/blob/main/papers/a%20recurrent%20solution%20of%20PH_M_C_N%20queue.pdf).
+
+Then the distribution of the number of computing jobs in the system is shown [here](https://github.com/ChinhTranKaizen/RoboTaxiComputing/blob/main/papers/Multi-server%20preemptive%20priority%20queue%20with%20general%20arrivals%20and%20service%20times.pdf)
 
 ## Summarized Findings
-1. Modeling of
-    Pictures with descriptions
-2.
+As a proof of concept and without loss of generality, we are going to look only at Monday morning from 6 to 10 am in May of 2019. The reason for this choice is that May is a neither a hot or cold month in NYC and Monday mornings are supposed to be rush hour time.
+### Hailers' behavior analysis
+#### Interarrival times
+- The average interarrival time of the hailers is 0.4 seconds
+- The variance interarrival time is 0.31 seconds
+- The cdf of the interarrival time then can be graphed as shown below:
+
+- Using the hyperstar tool, the Phase-type distribution parameters can be derived as:
+
+#### Trip duration
+- The average trip duration is 0.4 seconds
+- The variance trip duration is 0.31 seconds
+- The cdf of the trip duration then can be graphed as shown below:
+
+- Using the hyperstar tool, the Phase-type distribution parameters can be derived as:
+### Performance analysis of robotaxi computing system
+**on-going progress**
 
