@@ -53,5 +53,5 @@ As a proof of concept and without loss of generality, we are going to look only 
 - Using the hyperstar tool, the Phase-type distribution parameters can be derived as:
 !['fitting trip duration'](https://github.com/ChinhTranKaizen/RoboTaxiComputing/blob/main/May_2019/Monday_morning_fitting_trip_duration_screenshot.png?raw=true)
 ### Performance analysis of robotaxi computing system
-**on-going progress**
+**on-going work**
 
